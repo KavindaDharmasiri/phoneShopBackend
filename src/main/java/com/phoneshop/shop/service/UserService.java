@@ -20,4 +20,5 @@ public interface UserService {
 
     User getLastRecord();
 
+    List<User> getByName(String name);
 }

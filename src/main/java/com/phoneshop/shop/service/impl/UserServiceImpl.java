@@ -68,6 +68,12 @@ public class UserServiceImpl implements com.phoneshop.shop.service.UserService {
     }
 
     @Override
+    public List<User> getByName(String name) {
+        return mapper.map(repo.findByName(name), new TypeToken<List<UserDTO>>() {
+        }.getType());
+    }
+
+    @Override
     public User getLastRecord() {
         return repo.findFirstByOrderByIdDesc();
     }

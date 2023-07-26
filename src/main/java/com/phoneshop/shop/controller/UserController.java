@@ -26,6 +26,12 @@ public class UserController {
         return new com.phoneshop.shop.util.ResponseUtil(200, "Ok", userService.getAllUsers());
     }
 
+    @GetMapping(path = "/getByName", params = {"name"} , produces = MediaType.APPLICATION_JSON_VALUE)
+    public com.phoneshop.shop.util.ResponseUtil getByName(@RequestParam String name) {
+        System.out.println("get all");
+        return new com.phoneshop.shop.util.ResponseUtil(200, "Ok", userService.getByName(name));
+    }
+
     @GetMapping(path = "/getLast", produces = MediaType.APPLICATION_JSON_VALUE)
     public com.phoneshop.shop.util.ResponseUtil getLastUser() {
         System.out.println("get all");
